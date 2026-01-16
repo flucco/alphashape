@@ -157,7 +157,7 @@ def alphashape(points: Union[List[Tuple[float]], np.ndarray],
             resolved_alpha = alpha
 
         # Radius filter
-        if circumradius < 1.0 / resolved_alpha:
+        if circumradius <= 1.0 / resolved_alpha:
             for edge in itertools.combinations(
                     point_indices, r=coords.shape[-1]):
                 if all([e not in edges for e in itertools.combinations(
